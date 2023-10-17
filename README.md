@@ -4,7 +4,7 @@
 ### Introduction
 Approximately 1 in 4 adults in the United States face mental health challenges annually. In the quest to provide immediate guidance, this project harnesses the power of artificial intelligence to create a virtual assistant for mental health counseling. Using the 7 billion parameter Llama 2 model, this notebook walks through the development process of this prototype.
 
-Access the trained model: Huggingface - langecod/CounselLlama7B
+Access the trained model: Huggingface - [langecod/CounselLlama7B](https://huggingface.co/langecod/CounselLlama7B)
 
 ### Table of Contents
 Dataset Overview
@@ -13,13 +13,13 @@ Training and Prompting
 Chatbot Interface
 Conclusion
 ### 1. Dataset Overview
-The dataset, Amod/mental_health_counseling_conversations, comprises 3,512 Q&A pairs from counselchat.com. With advice from certified psychologists, it's tailor-made to train language models on mental health queries.
+The dataset, [Amod/mental_health_counseling_conversations](https://huggingface.co/datasets/Amod/mental_health_counseling_conversations), comprises 3,512 Q&A pairs from counselchat.com. With advice from certified psychologists, it's tailor-made to train language models on mental health queries.
 
 ### 2. Model Preparation
 Meta's 7 billion parameter Llama 2 chat model was chosen for the task of text generation. For memory efficiency and faster training, the model was quantized to 4-bit and the "Quantized Low-Rank Adaptation" (QLoRA) method was used to fine-tune the model on the dataset.
 
 ### 3. Training and Prompting
-Fine-tuning such a model has its nuances, from the number of epochs to the structuring of inputs. An emphasis is placed on the significance of the prompt, guiding the model to produce safe and beneficial mental health advice.
+An emphasis is placed on the significance of the prompt, guiding the model to produce safe and beneficial mental health advice that comforts the user and refers them to the appropriate resources. A formatting function was also applied so that the model was trained for 3 epochs on text that followed Llama's specific prompt-context-response input style.
 
 ### 4. Chatbot User Interface
 Using Ipywidgets, a basic chatbot interface was established, allowing users to interact with the model. While the model generally produces relevant and helpful responses, there are noted challenges like short and repetitive sentences. These, along with potential hallucinatory replies, are areas highlighted for future refinement.
